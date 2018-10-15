@@ -79,6 +79,7 @@
 			<artifactId>weld-core</artifactId>
 			<version>2.4.6.Final</version>
 		</dependency>
+
 	</dependencies>
 	<repositories>
 		<repository>
