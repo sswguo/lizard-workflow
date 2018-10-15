@@ -1,0 +1,10 @@
+.project
+.settings
+*/*/target
+./*/*/.settings/*
+./*/*/.classpath
+workflow-ear/target/
+workflow-web/target/
+*/target/
+.classpath
+*/.classpath

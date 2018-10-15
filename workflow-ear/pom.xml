@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.lizard</groupId>
+    <artifactId>workflow</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.lizard</groupId>
+  <artifactId>workflow-ear</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>ear</packaging>
+  
+  <dependencies>
+		<dependency>
+			<groupId>com.lizard</groupId>
+			<artifactId>workflow-ejb</artifactId>
+                        <version>0.0.1-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lizard</groupId>
+			<artifactId>workflow-web</artifactId>
+                        <version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+</dependencies>
+
+<build>
+		<finalName>workflow</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+                                <version>3.0.1</version>
+				<configuration>
+					<filtering>true</filtering>
+					<applicationName>Workflow</applicationName>
+					<displayName>Workflow</displayName>
+					<description>Workflow</description>
+					<version>7</version>
+					<filtering>true</filtering>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<initializeInOrder>false</initializeInOrder>
+					<modules>
+						<ejbModule>
+							<groupId>com.lizard</groupId>
+							<artifactId>workflow-ejb</artifactId>
+						</ejbModule>
+						<webModule>
+							<groupId>com.lizard</groupId>
+							<artifactId>workflow-web</artifactId>
+							<contextRoot>/workflow</contextRoot>
+						</webModule>
+					</modules>
+					<archive>
+						<manifestEntries>
+							<Dependencies>org.slf4j,org.dom4j</Dependencies>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+</build>
+</project>
