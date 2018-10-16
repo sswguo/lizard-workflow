@@ -17,4 +17,8 @@ public class ProcessResourceBean implements ProcessResources {
 
 	}
 
+	public String renderProcess() {
+		return processManagerBean.renderProcess();
+	}
+
 }

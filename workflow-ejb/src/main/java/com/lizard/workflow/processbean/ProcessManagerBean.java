@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
+import org.jbpm.kie.services.api.FormProviderService;
 import org.jbpm.kie.services.impl.KModuleDeploymentUnit;
 import org.jbpm.services.api.DeploymentService;
 import org.jbpm.services.api.ProcessService;
@@ -18,6 +19,9 @@ public class ProcessManagerBean {
 
     @Inject
     private DeploymentService deploymentService;
+
+    @Inject
+    private FormProviderService formService;
     
     private String myUnitId = "";
 
@@ -29,4 +33,7 @@ public class ProcessManagerBean {
         }
         processService.startProcess(myUnitId, processId, parameters);
 }
+    public String renderProcess() {
+    	return formService.getFormDisplayProcess("com.lizard:workflow-processes-demo:0.0.1-SNAPSHOT", "com.demo.MyProcess");
+    }
 }

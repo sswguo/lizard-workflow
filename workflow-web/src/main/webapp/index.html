@@ -5,9 +5,25 @@
 
 </head>
 <body>
-	<input type="button" id="start" value="Clieck me"/>
+	<input type="button" id="render" value="Clieck me to render process"/>
+	<input type="button" id="start" value="Clieck me to start process"/>
 	
 	<script type="text/javascript">
+	$('#render').click(function() {
+		  alert('render process');
+
+		  $.ajax({
+			  type: "GET",
+			  url: "rest/process/render",
+			  success: function(data) {
+			      alert(data)
+			    },
+			  dataType: 'text',
+			});
+		  
+		});
+
+	
 	$('#start').click(function() {
 		  alert('start process');
 
