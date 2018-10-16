@@ -15,6 +15,7 @@ public class ProcessManagerBean {
 
 	@Inject
     private ProcessService processService;
+
     @Inject
     private DeploymentService deploymentService;
     

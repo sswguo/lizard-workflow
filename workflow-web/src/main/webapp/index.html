@@ -1,0 +1,30 @@
+<html>
+<head>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+</head>
+<body>
+	<input type="button" id="start" value="Clieck me"/>
+	
+	<script type="text/javascript">
+	$('#start').click(function() {
+		  alert('start process');
+
+		  $.ajax({
+			  type: "POST",
+			  url: "rest/process/start",
+			  success: function(data) {
+			      alert('success')
+			    },
+			  dataType: 'jsonp',
+			});
+		  
+		});
+
+
+	
+	
+	</script>
+</body>
+</html>

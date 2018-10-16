@@ -36,6 +36,7 @@
   </dependencyManagement>
 
   <modules>
+  <module>workflow-client</module>
   	<module>workflow-web</module>
   	<module>workflow-ejb</module>
   	<module>workflow-ear</module>
