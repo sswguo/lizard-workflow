@@ -1,5 +1,7 @@
 package com.lizard.api.process;
 
+import java.util.Map;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
@@ -12,8 +14,8 @@ public class ProcessResourceBean implements ProcessResources {
 	@Inject
 	private ProcessManagerBean processManagerBean;
 
-	public void startProcess() {
-		processManagerBean.startProcess("com.demo.MyProcess", null);
+	public void startProcess(String processId, Map<String, Object> params) {
+		processManagerBean.startProcess(processId, params);
 
 	}
 
