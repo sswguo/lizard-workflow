@@ -2,8 +2,8 @@
 <div class="form-content one-col">
   <input type="hidden" name="processId" value="${process.id}"/>
   <div class="form-row clearfix">
-    <label>Ticket Id:</label>
-    <input type="text" name="ticketId" id="ticketId" value=""/>
+    <label>Issue key:</label>
+    <input type="text" name="issueKey" id="issueKey" value=""/>
     <input type="button" id="start-demo" value="Click me to start demo process"/>
   </div>
   	<#noparse>
