@@ -24,13 +24,13 @@
 			<type>war</type>
 		</dependency>
 		
-			<!-- Processes -->
+			<!-- Processes 
 		<dependency>
 			<groupId>com.lizard</groupId>
 			<artifactId>workflow-processes-demo</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>jar</type>
-		</dependency>
+		</dependency>-->
 </dependencies>
 
 <build>
