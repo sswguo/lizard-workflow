@@ -6,8 +6,8 @@
 </head>
 <body>
 	<input type="button" id="render" value="Clieck me to render process"/>
-	<input type="button" id="start" value="Clieck me to start process"/>
-	
+	<input type="button" id="start" value="Clieck me to deploy process"/>
+	<div id="process-start-form"></div>
 	<script type="text/javascript">
 	$('#render').click(function() {
 		  alert('render process');
@@ -17,6 +17,7 @@
 			  url: "rest/process/render",
 			  success: function(data) {
 			      alert(data)
+			      $('#process-start-form').html(data);
 			    },
 			  dataType: 'text',
 			});
