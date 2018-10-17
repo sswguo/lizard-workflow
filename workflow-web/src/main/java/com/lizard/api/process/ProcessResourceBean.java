@@ -21,4 +21,9 @@ public class ProcessResourceBean implements ProcessResources {
 		return processManagerBean.renderProcess();
 	}
 
+	public void deployProcess() {
+		processManagerBean.deployProcess("com.lizard", "workflow-processes-demo", "0.0.1-SNAPSHOT");
+		
+	}
+
 }

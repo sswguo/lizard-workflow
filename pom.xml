@@ -40,5 +40,6 @@
   	<module>workflow-web</module>
   	<module>workflow-ejb</module>
   	<module>workflow-ear</module>
+  	<module>workflow-process-demo</module>
   </modules>
 </project>

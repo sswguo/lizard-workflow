@@ -32,11 +32,18 @@ public class ProcessManagerBean {
     
     private String myUnitId = "";
 
+    public void deployProcess(final String groupId, final String artifactId, final String version) {
+        if (deploymentService.getDeployedUnit(myUnitId) == null) {
+            DeploymentUnit unit = new KModuleDeploymentUnit(groupId, artifactId, version);
+            myUnitId = unit.getIdentifier();
+            deploymentService.deploy(unit);
+        }
+}
+    
     public void startProcess(final String processId, final Map<String, Object> parameters) {
         if (deploymentService.getDeployedUnit(myUnitId) == null) {
             DeploymentUnit unit = new KModuleDeploymentUnit("com.lizard", "workflow-processes-demo", "0.0.1-SNAPSHOT");
             myUnitId = unit.getIdentifier();
-            deploymentService.deploy(unit);
         }
         processService.startProcess(myUnitId, processId, parameters);
 }

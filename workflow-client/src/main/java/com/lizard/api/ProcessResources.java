@@ -12,6 +12,10 @@ import javax.ws.rs.Produces;
 public interface ProcessResources {
 
 	@POST
+	@Path("/deploy")
+	public void deployProcess();
+
+	@POST
 	@Path("/start")
 	public void startProcess();
 
