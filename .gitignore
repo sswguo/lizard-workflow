@@ -1,3 +1,4 @@
+bin/*
 .project
 .settings
 */*/target
@@ -8,3 +9,5 @@ workflow-web/target/
 */target/
 .classpath
 */.classpath
+*/bin/*
+*/build/*
