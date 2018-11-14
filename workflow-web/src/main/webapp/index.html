@@ -7,6 +7,7 @@
 <body>
 	<input type="button" id="render" value="Click me to render process"/>
 	<input type="button" id="start" value="Click me to deploy process"/>
+	<input type="button" id="view_instances" value="Click me to view process instances"/>
 	<div id="process-start-form"></div>
 	<script type="text/javascript">
 	$('#render').click(function() {
@@ -31,6 +32,20 @@
 		  $.ajax({
 			  type: "POST",
 			  url: "rest/process/deploy",
+			  success: function(data) {
+			      alert('success')
+			    },
+			  dataType: 'jsonp',
+			});
+		  
+		});
+	
+	$('#view_instances').click(function() {
+		  alert('query instances');
+
+		  $.ajax({
+			  type: "GET",
+			  url: "rest/process/instances",
 			  success: function(data) {
 			      alert('success')
 			    },
